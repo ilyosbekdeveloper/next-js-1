@@ -3,7 +3,7 @@ import Layout from "../src/components/Layout";
 import { useRouter } from "next/router";
 import { getDataTeam } from "../api";
 
-const Teams = ({data}) => {
+const Teams = ({ data }) => {
   const router = useRouter();
 
   // useState example
@@ -23,14 +23,14 @@ const Teams = ({data}) => {
 
       <div className="boxes">
         {data &&
-          data.map((i, index) => (
+          data?.map((i, index) => (
             <div
               key={index}
-              onClick={() => router.push("/teams/" + i.path)}
+              onClick={() => router.push("/teams/" + i?.path)}
               className="box"
             >
-              <h4 className="box_title">{i.title}</h4>
-              <p>{i.p}</p>
+              <h4 className="box_title">{i?.title}</h4>
+              <p>{i?.p}</p>
             </div>
           ))}
       </div>
@@ -44,6 +44,6 @@ export async function getStaticProps(context) {
   const res = await getDataTeam();
 
   return {
-    props: { data: res.data },
+    props: { data: res.data ?? null },
   };
 }

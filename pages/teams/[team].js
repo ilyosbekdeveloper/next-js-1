@@ -4,9 +4,8 @@ import { useRouter } from "next/router";
 // import { boxes } from "../../data";
 import { getTeamMember } from "../../api";
 
-const Home = ({ data }) => {
+const Home = () => {
   const router = useRouter();
-  console.log(data);
   return (
     <Layout>
       <h1 className="mainTitle">{router.query.team}</h1>

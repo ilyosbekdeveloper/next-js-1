@@ -167,7 +167,7 @@ const Main = ({ isHide, setIsHide }) => {
                   ))}
                 </ul>
 
-                <Image src={GroupImage} />
+                <Image src={GroupImage} alt="img"/>
               </div>
             </div>
 
@@ -190,6 +190,7 @@ const Main = ({ isHide, setIsHide }) => {
               src={ProjectImage}
               width={741}
               height={407}
+              alt="img"
             />
             <div className="right_content">
               <div className="title">
